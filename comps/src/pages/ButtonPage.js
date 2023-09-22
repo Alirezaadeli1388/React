@@ -1,29 +1,47 @@
-import { BsTelegram, BsCheckAll } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
-import { AiFillWarning } from "react-icons/ai";
-import { MdDangerous } from "react-icons/md";
-import Button from "../components/Button";
+import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
+import Button from '../components/Button';
 
 function ButtonPage() {
-    return (
-        <div>
-            <div>
-                <Button primary rounded><BsTelegram />Telegram</Button>
-            </div>
-            <div>
-                <Button secondary rounded><FaXTwitter />Twitter</Button>
-            </div>
-            <div>
-                <Button warning rounded><AiFillWarning />warning</Button>
-            </div>
-            <div>
-                <Button success rounded><BsCheckAll />success</Button>
-            </div>
-            <div>
-                <Button danger rounded><MdDangerous />danger</Button>
-            </div>
-        </div>
-    );
+  const handleClick = () => {};
+
+  return (
+    <div>
+      <div>
+        <Button
+          secondary
+          outline
+          rounded
+          className="mb-5"
+          onClick={handleClick}
+        >
+          <GoBell />
+          Click me!!
+        </Button>
+      </div>
+      <div>
+        <Button danger rounded onMouseEnter={handleClick}>
+          <GoCloudDownload />
+          Buy Now!
+        </Button>
+      </div>
+      <div>
+        <Button warning rounded onMouseLeave={handleClick}>
+          <GoDatabase />
+          See Deal!
+        </Button>
+      </div>
+      <div>
+        <Button secondary outline>
+          Hide Ads!
+        </Button>
+      </div>
+      <div>
+        <Button primary rounded>
+          Something!
+        </Button>
+      </div>
+    </div>
+  );
 }
 
 export default ButtonPage;
